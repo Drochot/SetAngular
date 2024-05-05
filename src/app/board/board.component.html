@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div class="boardContainer">
+        <button type="button" [routerLink]="['']"> Return </button>
+        <br>
+        <app-card *ngFor="let card of cards" [card]="card" [selectable]="ongoing"
+            (clickEvent)="SelectCard($event)"></app-card>
+    </div>
+    <div class="statistics">
+        sets found: {{game.foundSets.length}} <br>
+        possible sets: {{game.setsOnBoard}} <br>
+        <button (click)="Reset()">Reset</button> <br>
+        <button (click)="getHint()">Hint</button> <br>
+        <h4>{{displayText}}</h4>
+    </div>
+
+    <div class="sets">
+        Sets Found: <br>
+        @for (set of game.foundSets; track $index) {
+        @for (card of set.cards; track $index) {
+        <app-card [card]=card [selectable]="false"></app-card>
+        }
+        <br>
+        }
+    </div>
+
+</div>

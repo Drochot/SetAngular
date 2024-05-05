@@ -1,0 +1,22 @@
+.wrapper{
+    display: flex;   
+}
+
+.boardContainer{
+    width: 434px;
+    display:inline-block;
+    margin: 10px;
+}
+
+.statistics{
+    display:inline-block;
+    margin: 10px;    
+}
+
+.sets{
+    display:inline-block;
+    margin: 10px;
+    
+}
+
+

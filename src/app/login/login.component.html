@@ -1,0 +1,29 @@
+<div>
+    <input #username (keyup.enter)="Login(username.value)" />
+    <button type="button" (click)="Login(username.value)">Log In</button>
+    <button type="button" (click)="NewGame(username.value)">New Game</button>
+    <hr>
+    <table>
+        <tr>
+            <th>Cards on Board</th>
+            <th>Sets Found</th>
+            <th>Sets on Board</th>
+        </tr>
+        @for (game of games; track game) {
+        <tr>
+            <td>{{ game.cardsOnBoard }}</td>
+            <td>{{ game.foundSets.length }}</td>
+            <td>{{ game.setsOnBoard }}</td>
+
+            <td>
+                <button type="button" [routerLink]="['play', game.gameId]"> Continue </button>
+            </td>
+            <td>
+                <button type="button" (click)="DeleteGame(game.gameId, username.value)"> Delete </button>
+            </td>
+        </tr>
+        }
+    </table>
+
+
+</div>
